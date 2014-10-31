@@ -8,13 +8,13 @@ This library catches two signals to control the profiler :
 * SIGUSR1 to start/stop it
 * SIGUSR2 to flush
 
-Example session :
-<pre>
+Start your daemon with:
+
 CPUPROFILE=tempus.prof LD_PRELOAD=./profiler_cmd.so ./my_daemon
-</pre>
+
 
 An in another console :
-<pre>
+
 # start the profiler
 killall -USR1 my_daemon
 # do things to profile
@@ -22,10 +22,9 @@ killall -USR1 my_daemon
 killall -USR1 my_daemon
 # flush it
 killall -USR2 my_daemon
-</pre>
 
 Compilation:
-<pre>
+------------
 gcc -c profiler_cmd.c -lprofiler -fPIC -DPIC
 ld -shared profiler_cmd.o -o profiler_cmd.so -lprofiler
-</pre>
+
