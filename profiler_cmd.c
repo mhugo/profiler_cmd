@@ -34,8 +34,5 @@ void _init()
     sigaction_.sa_flags = 0;
     sigaction( SIGUSR1, &sigaction_, NULL );
     sigaction( SIGUSR2, &sigaction_, NULL );
-
-    // don't start before ordered to
-    //    ProfilerStop();
 }
 
